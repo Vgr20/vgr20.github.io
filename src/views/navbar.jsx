@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import TypingText from '../components/typingtext_navbar';
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import TypingText from "../components/typingtext_navbar";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  
+
   // Change navbar styling on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -14,26 +14,33 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    
+
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav className={`sticky top-0 w-full h-20 flex items-center justify-between px-6 md:px-12 transition-all duration-300 z-50 ${
-      scrolled 
-        ? 'bg-zinc-800 shadow-2xl ' 
-        : 'bg-zinc-800 border-b-2 border-teal-600'
-    }`}>
+    <nav
+      className={`sticky top-0 w-full h-20 flex items-center justify-between px-6 md:px-12 transition-all duration-300 z-50 ${
+        scrolled
+          ? "bg-zinc-800 shadow-2xl "
+          : "bg-zinc-800 border-b-2 border-teal-600"
+      }`}
+    >
       {/* Left side - Your Name */}
       {/* <div className="text-amber-50 font-mono text-xl transition duration-300 ease-in-out cursor-pointer">
         The less you know, the more I reveal—fragments of me.
       </div> */}
-      <TypingText phrases={["Little you know, yet much I show...", "Unseen yet shown in fragmented pieces...",]} />
-      
+      <TypingText
+        phrases={[
+          "Little you know, yet much I show...",
+          "Unseen yet shown in fragmented pieces...",
+        ]}
+      />
+
       {/* Right side - Navigation Links */}
       <div className="hidden md:flex items-center space-x-1">
         <NavLink to="home" title="Home" />
@@ -42,12 +49,22 @@ const Navbar = () => {
         <NavLink to="resume" title="Resume" />
         <NavLink to="contact" title="Contact" />
       </div>
-      
+
       {/* Mobile menu button */}
       <div className="md:hidden flex items-center">
         <button className="text-white hover:text-amber-400 focus:outline-none">
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </div>

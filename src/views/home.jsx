@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   FaFacebookF,
   FaTwitter,
@@ -23,7 +23,55 @@ import { GiMailShirt } from "react-icons/gi";
 import { BiMailSend } from "react-icons/bi";
 import { DiJava } from "react-icons/di";
 
+// Custom hook for detecting when an element is visible in viewport
+const useIntersectionObserver = (options = {}) => {
+  const elementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    }, options);
+
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
+
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [options]);
+
+  return [elementRef, isVisible];
+};
+
 const Home = () => {
+  // Animation visibility refs
+  const [welcomeRef, isWelcomeVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+  const [titleRef, isTitleVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+  const [subtitleRef, isSubtitleVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+  const [descriptionRef, isDescriptionVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+  const [socialRef, isSocialVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+  const [skillsRef, isSkillsVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+  const [imageRef, isImageVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+
   const phrases = [
     "a Professional Coder ",
     "a Full Stack Developer ",
@@ -81,29 +129,66 @@ const Home = () => {
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div className="space-y-6">
-          <p className="text-rose-500 text-2xl">A LITTLE ABOUT ME</p>
+          <p
+            ref={welcomeRef}
+            className={`text-rose-400 text-2xl transition-all duration-1000 ${
+              isWelcomeVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            A LITTLE ABOUT ME
+          </p>
 
-          <h1 className="text-5xl md:text-6xl font-bold">
+          <h1
+            ref={titleRef}
+            className={`text-5xl md:text-6xl font-bold transition-all duration-1000 delay-300 ${
+              isTitleVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
+            }`}
+          >
             Hi, I'm <span className="text-teal-500">Vishagar Arunan</span>
           </h1>
 
-          <h2 className="text-3xl md:text-4xl font-semibold flex items-center">
+          <h2
+            ref={subtitleRef}
+            className={`text-3xl md:text-4xl font-semibold transition-all duration-1000 delay-500 ${
+              isSubtitleVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
+            }`}
+          >
             <span className="inline-block min-h-12">{currentText}</span>
-            <span className="inline-block h-8 translate-x-1 w-1 bg-rose-500 animate-bounce"></span>
+            <span className="inline-block h-8 translate-x-1 w-1 bg-rose-500 animate-pulse"></span>
           </h2>
 
-          <p className="text-teal-50 max-w-2xl">
+          <p
+            ref={descriptionRef}
+            className={`text-teal-50 max-w-xl transition-all duration-1000 delay-700 ${
+              isDescriptionVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             Hi! I’m Vishagar, an undergraduate student pursuing Electronic and
             Telecommunication Engineering at the University of Moratuwa, Sri
             Lanka. As a Dean’s List achiever, I thrive at the intersection of
             research and practical innovation, specializing in Computer Vision,
-            Machine Learning, Signal Processing, and Mathematics, leveraging
+            Machine Learning, Software Engineering, and Mathematics, leveraging
             state of the art technologies
           </p>
 
           <div className="flex flex-col md:flex-row justify-between pt-6 space-y-6 md:space-y-0 md:space-x-12">
             {/* Socials Section */}
-            <div>
+            <div
+              ref={socialRef}
+              className={`pt-6 transition-all duration-1000 delay-900 ${
+                isSocialVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <p className="text-rose-500 mb-4">FIND ME IN</p>
               <div className="flex space-x-4">
                 <SocialIcon icon={<FaGithub />} />
@@ -115,7 +200,14 @@ const Home = () => {
             </div>
 
             {/* Skills Section */}
-            <div>
+            <div
+              ref={skillsRef}
+              className={`pt-6 transition-all duration-1000 delay-1100 ${
+                isSkillsVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <p className="text-rose-500 mb-4">BEST SKILL ON</p>
               <div className="flex space-x-4">
                 <SocialIcon icon={<SiPython />} />
@@ -130,7 +222,14 @@ const Home = () => {
         </div>
 
         {/* Right Image */}
-        <div className="hidden rounded-4xl scale-90 md:block shadow-2xl shadow-gray-800">
+        <div
+          ref={imageRef}
+          className={`hidden rounded-4xl scale-90 md:block shadow-2xl shadow-gray-800 transition-all duration-1000 delay-500 ${
+            isImageVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-20"
+          }`}
+        >
           <img
             src="/src/assets/profile/bg_remove.png"
             alt="Professional Portrait"
