@@ -73,7 +73,6 @@ const Home = () => {
   });
 
   const phrases = [
-    "a Professional Coder ",
     "a Full Stack Developer ",
     "an Independent Researcher ",
     "a Mobile App Developer ",
@@ -179,6 +178,19 @@ const Home = () => {
             state of the art technologies
           </p>
 
+          <p
+            ref={descriptionRef}
+            className={`text-teal-50 max-w-xl transition-all duration-1000 delay-700 ${
+              isDescriptionVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            I believe the universe conspires to reward consistent effort.
+            Whether hiking mountains, pre-planning workflows, or chasing
+            deadlines, I balance curiosity with discipline. Let’s connect and
+            explore how algorithms—or acoustic melodies—can shape the future!
+          </p>
           <div className="flex flex-col md:flex-row justify-between pt-6 space-y-6 md:space-y-0 md:space-x-12">
             {/* Socials Section */}
             <div
