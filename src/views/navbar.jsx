@@ -36,8 +36,11 @@ const Navbar = () => {
       </div> */}
       <TypingText
         phrases={[
-          "Little you know, yet much I show...",
-          "Unseen yet shown in fragmented pieces...",
+          "Hey there...!!!",
+          "Thanks for stopping by — I'm Vishagar...",
+          "Welcome to my digital space!!!",
+          "Curious minds make great company...",
+          "Scroll on to discover what I create, build, and believe in...",
         ]}
       />
 

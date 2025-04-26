@@ -273,7 +273,7 @@ const Home = () => {
           }`}
         >
           <img
-            src="/src/assets/profile/bg_remove.png"
+            src="/profile/bg_remove.png"
             alt="Professional Portrait"
             className="max-w-full h-auto rounded"
           />

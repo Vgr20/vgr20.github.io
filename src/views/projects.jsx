@@ -41,7 +41,7 @@ const Projects = () => {
       id: 1,
       title: "DARBFs-ICCV 2025(under review)",
       year: 2025,
-      image: "/src/assets/projects/darbfs.png",
+      image: "/projects/darbfs.png",
       description:
         "A 3D reconstruction pipeline leveraging decaying anisotropic radial basis functions (DARBFs) as a generalization of Gaussian splatting. Achieved up to 34% faster training and 15% lower memory usage while preserving reconstruction quality (PSNR, SSIM, LPIPS).",
       github: "https://github.com/viruthshaan/darb-splatting",
@@ -52,7 +52,7 @@ const Projects = () => {
       id: 2,
       title: "SPLATVISTA-WebGL 3DGS Viewer",
       year: "Ongoing",
-      image: "/src/assets/projects/splatvista.png",
+      image: "/projects/splatvista.png",
       description:
         " A WebGL-based virtual tour platform using Gaussian Splatting for real-time 3D scene exploration. Enables immersive navigation and interactive transitions between photorealistic environments.",
       github: "https://github.com/Vgr20/ThreeJS_Splatting",
@@ -63,7 +63,7 @@ const Projects = () => {
       id: 3,
       title: "Cosmo Cruise - WebGL FPS Game",
       year: 2024,
-      image: "/src/assets/projects/cosmo_cruise.png",
+      image: "/projects/cosmo_cruise.png",
       description:
         "A WebGL-based third-person space adventure game that integrates real-life energy management strategies into gameplay for an educational yet immersive experience",
       github: "https://github.com/EnergySquad/Phase03_Game",
@@ -74,7 +74,7 @@ const Projects = () => {
       id: 4,
       title: "GoGetOn-Mobile Task Manager",
       year: 2023,
-      image: "/src/assets/projects/gogeton.png",
+      image: "/projects/gogeton.png",
       description:
         "“GoGetOn”, a productivity mobile application with AI features to convert your distant dream of being productive into a convenient choice. ",
       github: "https://github.com/Vgr20/DOit/tree/UpDateReadMe",
@@ -85,7 +85,7 @@ const Projects = () => {
       id: 5,
       title: "Personal Portfolio Website",
       year: 2025,
-      image: "/src/assets/projects/portfolio.png",
+      image: "/projects/portfolio.png",
       description:
         "A responsive personal portfolio website showcasing skills, projects, and contact information using React and Tailwind CSS (this site!).",
       github: "https://github.com/Vgr20/vgr20.github.io",
@@ -96,7 +96,7 @@ const Projects = () => {
       id: 6,
       title: "KeyBay-Online Marketplace",
       year: 2022,
-      image: "/src/assets/projects/keybay.png",
+      image: "/projects/keybay.png",
       description:
         "A prototype for an online marketplace platform featuring product listings, search and filter functionality, secure checkout, and user account management, designed for a smooth and scalable e-commerce experience.",
       github: "https://github.com/Vgr20/KeyBay",
@@ -107,7 +107,7 @@ const Projects = () => {
       id: 7,
       title: "KOP - Own Music Composition",
       year: 2024,
-      image: "/src/assets/projects/kop.jpeg",
+      image: "/projects/kop.jpeg",
       description:
         "A soulful love track, captivating the emotions of human life. An original song fully composed, arranged, and produced by me",
       github: "https://www.youtube.com/@stavemusicalcrew2495",
@@ -119,7 +119,7 @@ const Projects = () => {
       id: 8,
       title: "Pogathey-From Mix to Master",
       year: 2025,
-      image: "/src/assets/projects/pogathey.jpeg",
+      image: "/projects/pogathey.jpeg",
       description:
         "A catchy track. Engineered the mixing and mastering of this track, enhancing clarity, balance, and dynamics for a polished, professional sound.",
       github: "https://www.youtube.com/@ATScreation_official",
@@ -144,7 +144,7 @@ const Projects = () => {
             VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-300 to-teal-900 bg-clip-text text-transparent">
-            MyCrafts and WORKFOLIO
+            Projects and Publications
           </h2>
           <div className="w-32 h-1 bg-rose-600 mx-auto"></div>
         </div>

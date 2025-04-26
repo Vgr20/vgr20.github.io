@@ -243,7 +243,7 @@ export default function ResumeSection() {
             Get to know more about me
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-300 to-teal-700 bg-clip-text text-transparent">
-            My Resume
+            Resume
           </h2>
           <div className="w-32 h-1 bg-rose-600 mx-auto"></div>
         </div>
