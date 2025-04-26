@@ -39,40 +39,92 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "DARBFs - ICCV 2025 under review",
+      title: "DARBFs-ICCV 2025(under review)",
+      year: 2025,
       image: "/src/assets/projects/darbfs.png",
       description:
-        "A full-stack social media application with features like user authentication, posts, comments, likes, and real-time notifications using React, Node.js, and Socket.io.",
+        "A 3D reconstruction pipeline leveraging decaying anisotropic radial basis functions (DARBFs) as a generalization of Gaussian splatting. Achieved up to 34% faster training and 15% lower memory usage while preserving reconstruction quality (PSNR, SSIM, LPIPS).",
       github: "https://github.com/viruthshaan/darb-splatting",
       liveDemo: "https://randomnerds.github.io/darbs.github.io/",
+      tags: ["ICCV 2025", "Computer Vision", "Research"],
     },
     {
       id: 2,
       title: "SPLATVISTA-WebGL 3DGS Viewer",
-      image: "/api/placeholder/600/400",
+      year: "Ongoing",
+      image: "/src/assets/projects/splatvista.png",
       description:
-        "A responsive e-commerce platform with product catalog, shopping cart, user authentication, and payment integration using React, Redux, and Stripe API.",
-      github: "https://github.com",
-      liveDemo: "https://example.com",
+        " A WebGL-based virtual tour platform using Gaussian Splatting for real-time 3D scene exploration. Enables immersive navigation and interactive transitions between photorealistic environments.",
+      github: "https://github.com/Vgr20/ThreeJS_Splatting",
+      liveDemo: "https://github.com/Vgr20/ThreeJS_Splatting",
+      tags: ["WebGL", "React"],
     },
     {
       id: 3,
       title: "Cosmo Cruise - WebGL FPS Game",
-      image: "/api/placeholder/600/400",
+      year: 2024,
+      image: "/src/assets/projects/cosmo_cruise.png",
       description:
-        "A real-time messaging application with private and group chats, file sharing, and emojis using React Native, Firebase, and WebRTC for voice calls.",
-      github: "https://github.com",
-      liveDemo: "https://example.com",
+        "A WebGL-based third-person space adventure game that integrates real-life energy management strategies into gameplay for an educational yet immersive experience",
+      github: "https://github.com/EnergySquad/Phase03_Game",
+      liveDemo: "https://github.com/EnergySquad/Phase03_Game",
+      tags: ["WebGL", "Unity"],
     },
     {
       id: 4,
-      title: "KOP - Own Music Composition",
-      image: "/src/assets/projects/kop.jpeg",
+      title: "GoGetOn-Mobile Task Manager",
+      year: 2023,
+      image: "/src/assets/projects/gogeton.png",
+      description:
+        "“GoGetOn”, a productivity mobile application with AI features to convert your distant dream of being productive into a convenient choice. ",
+      github: "https://github.com/Vgr20/DOit/tree/UpDateReadMe",
+      liveDemo: "https://github.com/Amrithshagar/GoGetOn-Backend",
+      tags: ["React Native"],
+    },
+    {
+      id: 5,
+      title: "Personal Portfolio Website",
+      year: 2025,
+      image: "/src/assets/projects/portfolio.png",
       description:
         "A responsive personal portfolio website showcasing skills, projects, and contact information using React and Tailwind CSS (this site!).",
+      github: "https://github.com/Vgr20/vgr20.github.io",
+      liveDemo: "https://example.com",
+      tags: ["React", "Tailwind CSS"],
+    },
+    {
+      id: 6,
+      title: "KeyBay-Online Marketplace",
+      year: 2022,
+      image: "/src/assets/projects/keybay.png",
+      description:
+        "A prototype for an online marketplace platform featuring product listings, search and filter functionality, secure checkout, and user account management, designed for a smooth and scalable e-commerce experience.",
+      github: "https://github.com/Vgr20/KeyBay",
+      liveDemo: "https://github.com/Vgr20/KeyBay",
+      tags: ["Java", "Java Swing"],
+    },
+    {
+      id: 7,
+      title: "KOP - Own Music Composition",
+      year: 2024,
+      image: "/src/assets/projects/kop.jpeg",
+      description:
+        "A soulful love track, captivating the emotions of human life. An original song fully composed, arranged, and produced by me",
       github: "https://www.youtube.com/@stavemusicalcrew2495",
       liveDemo:
         "https://www.youtube.com/watch?v=fNJUb6_OiGQ&ab_channel=STAVEMusicalCrew",
+      tags: ["Music", "Composition"],
+    },
+    {
+      id: 8,
+      title: "Pogathey-From Mix to Master",
+      year: 2025,
+      image: "/src/assets/projects/pogathey.jpeg",
+      description:
+        "A catchy track. Engineered the mixing and mastering of this track, enhancing clarity, balance, and dynamics for a polished, professional sound.",
+      github: "https://www.youtube.com/@ATScreation_official",
+      liveDemo: "https://youtu.be/y7qcyw55io8?feature=shared",
+      tags: ["Music", "Mixing", "Mastering"],
     },
   ];
 
@@ -92,7 +144,7 @@ const Projects = () => {
             VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-300 to-teal-900 bg-clip-text text-transparent">
-            Projects and Publications
+            MyCrafts and WORKFOLIO
           </h2>
           <div className="w-32 h-1 bg-rose-600 mx-auto"></div>
         </div>
@@ -144,8 +196,11 @@ const ProjectCard = ({ project, delay = 0 }) => {
       </div>
 
       {/* Project Title */}
-      <h3 className="text-rose-600 font-semibold tracking-wide text-lg px-6 pt-6 pb-2">
+      <h3 className="text-rose-500 font-medium tracking-wide text-lg px-6 pt-6 pb-2">
         {project.title}
+      </h3>
+      <h3 className="text-teal-500 tracking-wide text-sm px-6 pb-2">
+        {project.year}
       </h3>
 
       {/* Project Links */}
@@ -171,6 +226,19 @@ const ProjectCard = ({ project, delay = 0 }) => {
 
       {/* Project Description */}
       <p className="text-gray-300 px-6 pb-6 text-sm">{project.description}</p>
+      {/* Tags */}
+      <div className="flex flex-wrap px-6 pb-6 space-x-2">
+        <span className="s">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="bg-teal-700 text-gray-300 text-xs font-semibold px-2 py-1 rounded-md mr-2 mb-2 hover:bg-rose-600 transition-colors"
+            >
+              {tag}
+            </span>
+          ))}
+        </span>
+      </div>
     </div>
   );
 };

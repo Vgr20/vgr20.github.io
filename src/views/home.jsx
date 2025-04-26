@@ -203,11 +203,41 @@ const Home = () => {
             >
               <p className="text-rose-500 mb-4">FIND ME IN</p>
               <div className="flex space-x-4">
-                <SocialIcon icon={<FaGithub />} />
-                <SocialIcon icon={<FaGoogleScholar />} />
-                <SocialIcon icon={<FaLinkedinIn />} />
-                <SocialIcon icon={<FaMedium />} />
-                <SocialIcon icon={<BiMailSend />} />
+                <a
+                  href="https://github.com/vgr20"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon icon={<FaGithub />} />
+                </a>
+                <a
+                  href="https://scholar.google.com/citations?user=epa4RPoAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon icon={<FaGoogleScholar />} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/vishagar-arunan-97a9b0283/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon icon={<FaLinkedinIn />} />
+                </a>
+                <a
+                  href="https://medium.com/@vgr0876"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon icon={<FaMedium />} />
+                </a>
+                <a
+                  href="mailto:vgr0876@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon icon={<BiMailSend />} />
+                </a>
               </div>
             </div>
 
